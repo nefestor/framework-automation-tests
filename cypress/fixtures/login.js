@@ -1,4 +1,4 @@
-{
+module.exports = {
   "user": "thiago.coelho",
   "invalidUser": "cypress.test",
   "password": "frame2021",

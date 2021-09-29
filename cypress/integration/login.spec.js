@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import data from "../fixtures/login.json"
+import data from "../fixtures/login"
 import Login from "../support/pages/login/login";
 
-context("ContractsCreation Tests", () => {
+context("Login Tests", () => {
     beforeEach(() => {
         cy.clearLocalStorage();
         cy.clearCookies();
