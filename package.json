@@ -1,0 +1,18 @@
+{
+  "name": "framework-automation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nefestor/framework-automation-tests.git"
+  },
+  "scripts": {
+    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}",
+    "e2e:record": "cypress run --record",
+    "test:ci:record": "run-p --race start:ci e2e:record"
+  },
+  "author": "Tiago Coelho",
+  "dependencies": {
+    "npm-run-all": "^4.1.2",
+    "cypress": "8.3.1",
+    "serve": "11.3.0"
+  }
+}
