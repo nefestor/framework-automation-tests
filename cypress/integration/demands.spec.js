@@ -15,16 +15,11 @@ context("Login Tests", () => {
     });
 
     it.only("Should register a new demand", () => { //Adicionar verificação se codigo ou nome já existe
-        do {
-            cy.get(NewDemand.codeInput).type(newDemandData.randomCode);
-        }
-        while(cy.get(NewDemand.codeErrorMessage));
-        do {
-            cy.get(NewDemand.nameInput).type(newDemandData.randomName);
-        }
-        while(cy.get(NewDemand.nameErrorMessage));
+        cy.get(NewDemand.codeInput).type(newDemandData.randomCode);
+        cy.get(NewDemand.nameInput).type(newDemandData.randomName);
         cy.get(NewDemand.completeType).check();
         cy.get(NewDemand.scenariosInput).type(newDemandData.randomScenarios);
+        cy.contains('button', NewDemand.submitFormButton).click();
         cy.get(NewDemand.resultMessage).should('contain.text', newDemandData.successMessage);
     });
 
