@@ -14,7 +14,7 @@ context("Login Tests", () => {
         NewDemand.visit();
     });
 
-    it.only("Should register a new demand", () => { //Adicionar verificação se codigo ou nome já existe
+    it.only("Should register a new demand", () => { //Repete o teste em até 3x, se for necessário, para que não haja problema com o codigo e nomes unicos.
         cy.get(NewDemand.codeInput).type(newDemandData.randomCode);
         cy.get(NewDemand.nameInput).type(newDemandData.randomName);
         cy.get(NewDemand.completeType).check();
